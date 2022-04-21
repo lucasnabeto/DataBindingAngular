@@ -1,0 +1,35 @@
+<section class="event-binding">
+    <h3>Event Binding</h3>
+    <ul>
+        <li>Passa a informação de um evento do template para o componente.</li>
+        <li>
+            Usa-se parênteses para fazer o binding (ex.:
+            (click)="nomeFuncaoComponente()")
+        </li>
+        <li>
+            Formato padrão é através de on-nomeEvento (ex.:
+            on-click="nomeFuncaoComponente()")
+        </li>
+    </ul>
+    <div>
+        <button class="btn btn-primary" (click)="botaoClicado()">
+            Clique aqui!
+        </button>
+        <br /><br />
+        <input
+            type="text"
+            (keyup)="onKeyUp($event)"
+            (keyup.enter)="salvarValorDigitado($any($event.target).value)"
+            (blur)="salvarValorDigitado(campoInput.value)"
+            #campoInput
+        />
+        <p>Valor digitado: {{ valorDigitado }}</p>
+        <p>Valor salvo: {{ valorSalvo }}</p>
+        <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver"
+            >Passe o mouse sobre mim.</span
+        >
+    </div>
+</section>

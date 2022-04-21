@@ -1,0 +1,43 @@
+<section>
+    <article>
+        <h3>Two-way Data Binding</h3>
+        <ul>
+            <li>
+                Os valores passam do template para o componente e vice-versa.
+            </li>
+            <li>Usa-se binding de propriedades e de eventos juntos.</li>
+            <li>
+                Necessário importar o módulo FormsModule do @angular/forms para
+                poder utilizar o ngModel.
+            </li>
+        </ul>
+
+        <!-- Método 1: -->
+        <input
+            type="text"
+            [value]="nome1"
+            (input)="nome1 = valorInput.value"
+            #valorInput
+        />
+        <p>Você digitou o nome {{ nome1 }}</p>
+
+        <!-- Método 2: -->
+        <input type="text" [ngModel]="nome2" (ngModelChange)="nome2 = $event" />
+        <p>Você digitou o nome {{ nome2 }}</p>
+
+        <!-- Método 3: -->
+        <input type="text" bindon-ngModel="nome3" />
+        <p>Você digitou o nome {{ nome3 }}</p>
+
+        <!-- Método 4: -->
+        <input type="text" [(ngModel)]="nome4" />
+        <p>Você digitou o nome {{ nome4 }}</p>
+
+        <input type="text" [(ngModel)]="pessoa.nome" />
+        <input type="text" [(ngModel)]="pessoa.idade" />
+        <p>
+            Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de
+            idade.
+        </p>
+    </article>
+</section>

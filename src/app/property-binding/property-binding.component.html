@@ -1,0 +1,32 @@
+<section class="property-binding">
+    <article>
+        <h3>Interpolação e Property Binding</h3>
+        <p>String renderizada com interpolação: {{ url }}</p>
+        <p>O resultado de 1 + 1 é {{ 1 + 1 }}.</p>
+        <p>O resultado de 1 + 1 é {{ 1 + 1 + getValor() }}</p>
+
+        <ul>
+            <li>Passa o valor do componente para o template.</li>
+            <li>
+                Usa-se colchetes para fazer o binding (ex.: &lt;img
+                [src]="urlImagem"&gt;)
+            </li>
+            <li>
+                Formato padrão é através de bind-nomePropriedade (ex.: &lt;img
+                bind-src="urlImagem"&gt;)
+            </li>
+            <li>
+                Quando não existe uma propriedade no elemento, usa-se
+                [attr.nomePropriedade] (ex.: [attr.colspan]).
+            </li>
+        </ul>
+        <!-- Método 1: -->
+        <img src="{{ urlImagem }}" />
+
+        <!-- Método 2: -->
+        <img bind-src="urlImagem" />
+
+        <!-- Método 3: -->
+        <img [src]="urlImagem" />
+    </article>
+</section>
