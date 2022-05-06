@@ -12,6 +12,7 @@ export class AppComponent {
     classStyleBinding: boolean = false;
     eventBinding: boolean = false;
     twoWayDataBinding: boolean = false;
+    inputOutputProperties: boolean = false;
 
     ngOnInit() {
         this.changeBindingType("property");
@@ -31,6 +32,8 @@ export class AppComponent {
             case "two-way":
                 this.selectTwoWayDataBinding();
                 break;
+            case "input-output-properties":
+                this.selectInputOutputProperties();
         }
     }
 
@@ -39,23 +42,38 @@ export class AppComponent {
         this.classStyleBinding = false;
         this.eventBinding = false;
         this.twoWayDataBinding = false;
+        this.inputOutputProperties = false;
     }
+
     selectClassStyleBinding() {
         this.propertyBinding = false;
         this.classStyleBinding = true;
         this.eventBinding = false;
         this.twoWayDataBinding = false;
+        this.inputOutputProperties = false;
     }
+
     selectEventBinding() {
         this.propertyBinding = false;
         this.classStyleBinding = false;
         this.eventBinding = true;
         this.twoWayDataBinding = false;
+        this.inputOutputProperties = false;
     }
+
     selectTwoWayDataBinding() {
         this.propertyBinding = false;
         this.classStyleBinding = false;
         this.eventBinding = false;
         this.twoWayDataBinding = true;
+        this.inputOutputProperties = false;
+    }
+
+    selectInputOutputProperties() {
+        this.propertyBinding = false;
+        this.classStyleBinding = false;
+        this.eventBinding = false;
+        this.twoWayDataBinding = false;
+        this.inputOutputProperties = true;
     }
 }
