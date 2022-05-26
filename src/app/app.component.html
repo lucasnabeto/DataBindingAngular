@@ -7,9 +7,8 @@
             <option value="class-style">class e style binding</option>
             <option value="event">event binding</option>
             <option value="two-way">two way data binding</option>
-            <option value="input-output-properties">
-                input output properties
-            </option>
+            <option value="input-properties">input properties</option>
+            <option value="output-properties">output properties</option>
         </select>
     </div>
 
@@ -25,11 +24,19 @@
         *ngIf="twoWayDataBinding"
     ></app-two-way-data-binding>
 
-    <app-input-output-properties
-        *ngIf="inputOutputProperties"
-        [nome1]="'Projeto de ' + title + ' - Método 1, variável 1'"
-        [nomeDoCurso2]="'Projeto de ' + title + ' - Método 1, variável 2'"
-        [nome2]="'Projeto de ' + title + ' - Método 2'"
-        [nomeDoCurso4]="'Projeto de ' + title + ' - Método 3'"
-    ></app-input-output-properties>
+    <app-input-properties
+        *ngIf="inputProperties"
+        [nome1]="'Projeto de ' + titulo + ' - Método 1, variável 1'"
+        [nomeDoCurso2]="'Projeto de ' + titulo + ' - Método 1, variável 2'"
+        [nome2]="'Projeto de ' + titulo + ' - Método 2'"
+        [nomeDoCurso4]="'Projeto de ' + titulo + ' - Método 3'"
+    ></app-input-properties>
+
+    <app-output-properties
+        *ngIf="outputProperties"
+        [valorContador]="10"
+        (mudouValorContador)="onMudouValor($event)"
+    >
+        <!-- O uso de colchetes no property binding é opcional quando o valor passado não vem de uma variável do componente atual. -->
+    </app-output-properties>
 </section>

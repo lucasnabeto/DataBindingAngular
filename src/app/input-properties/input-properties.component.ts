@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-    selector: "app-input-output-properties",
-    templateUrl: "./input-output-properties.component.html",
-    styleUrls: ["./input-output-properties.component.scss"],
+    selector: "app-input-properties",
+    templateUrl: "./input-properties.component.html",
+    styleUrls: ["./input-properties.component.scss"],
     inputs: ["nomeDoCurso1:nome1", "nomeDoCurso2"], //Método 1 - Cada posição do array é uma variável interna sendo exposta para componentes externos.
 })
-export class InputOutputPropertiesComponent implements OnInit {
+export class InputPropertiesComponent implements OnInit {
     nomeDoCurso1: string = "";
     nomeDoCurso2: string = "";
 

@@ -8,7 +8,8 @@ import { ClassStyleBindingComponent } from "./class-style-binding/class-style-bi
 import { EventBindingComponent } from "./event-binding/event-binding.component";
 import { TwoWayDataBindingComponent } from "./two-way-data-binding/two-way-data-binding.component";
 import { FormsModule } from "@angular/forms";
-import { InputOutputPropertiesComponent } from './input-output-properties/input-output-properties.component';
+import { InputPropertiesComponent } from "./input-properties/input-properties.component";
+import { OutputPropertiesComponent } from './output-properties/output-properties.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { InputOutputPropertiesComponent } from './input-output-properties/input-
         ClassStyleBindingComponent,
         EventBindingComponent,
         TwoWayDataBindingComponent,
-        InputOutputPropertiesComponent,
+        InputPropertiesComponent,
+        OutputPropertiesComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FormsModule],
     providers: [],
