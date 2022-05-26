@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+    Component,
+    OnInit,
+    Input,
+    Output,
+    EventEmitter,
+    ViewChild,
+    ElementRef,
+} from "@angular/core";
 
 @Component({
     selector: "app-output-properties",
@@ -12,9 +20,17 @@ export class OutputPropertiesComponent implements OnInit {
     @Output()
     mudouValorContador = new EventEmitter();
 
+    @ViewChild("campoInput", { static: false })
+    campoValorInput!: ElementRef; //O "!" permite que a variável seja criada sem ser inicializada com algum valor.
+
     constructor() {}
 
     ngOnInit(): void {}
+
+    incrementaComViewChild() {
+        this.campoValorInput.nativeElement.value++;
+        this.mudouValorContador.emit({ novoValor: this.valorContador });
+    }
 
     incrementa() {
         this.valorContador++;
@@ -23,6 +39,11 @@ export class OutputPropertiesComponent implements OnInit {
 
     decrementa() {
         this.valorContador--;
+        this.mudouValorContador.emit({ novoValor: this.valorContador });
+    }
+
+    decrementaComViewChild() {
+        this.campoValorInput.nativeElement.value--;
         this.mudouValorContador.emit({ novoValor: this.valorContador });
     }
 }
